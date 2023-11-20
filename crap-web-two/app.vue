@@ -8,6 +8,17 @@ import {
 } from "omorphia";
 import "omorphia/dist/style.css";
 
+const isTextVisible = ref(false);
+
+//markdownEditor
+
+
+function onButtonPress() {
+  isTextVisible.value = true;
+}
+
+const reportModal = ref<typeof ReportModal | null>(null);
+
 function onPrisonSend() {
   alert("sent to prison");
 }
@@ -33,22 +44,22 @@ function onPrisonSend() {
 
     <div v-if="data" class="project-list display-mode--list">
       <ProjectCard
-        :id="data.id"
-        :type="data.project_type"
-        :name="data.title"
-        :author="sortedMembers[0].user.username"
-        :iconUrl="data.icon_url"
-        :description="data.description"
-        :downloads="String(formatCompactNumber(data.downloads))"
-        :follows="String(formatCompactNumber(data.followers))"
-        :createdAt="data.published"
-        :updatedAt="data.updated"
-        :projectTypeDisplay="data.project_type"
-        :projectTypeUrl="`/${data.project_type}`"
-        :serverSide="data.server_side"
-        :clientSide="data.client_side"
+        :id="ID"
+        :type="project_type"
+        :name="title"
+        :author="sortedMembers"
+        :iconUrl="icon_url"
+        :description="description"
+        :downloads="download"
+        :follows="followers"
+        :createdAt="published"
+        :updatedAt="updated"
+        :projectTypeDisplay="roject_type"
+        :projectTypeUrl="oject_type"
+        :serverSide="server_side"
+        :clientSide="client_side"
         :showUpdatedDate="false"
-        :color="data.color"
+        :color="color"
       ></ProjectCard>
     </div>
     <!-- <template v-else>Data is not loaded yet</template> -->

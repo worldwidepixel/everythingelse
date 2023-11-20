@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "@vintl/nuxt": "^1.8.0",
+    "dayjs": "^1.11.10",
+    "markdown-it": "^13.0.2",
     "omorphia": "^0.6.0"
   }
 }

@@ -31,8 +31,6 @@ function onPrisonSend() {
       ]"
     />
 
-    {{ String(formatCompactNumber(data.downloads)) }}
-
     <div v-if="data" class="project-list display-mode--list">
       <ProjectCard
         :id="data.id"

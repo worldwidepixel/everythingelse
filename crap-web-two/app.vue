@@ -8,35 +8,6 @@ import {
   MarkdownEditor,
 } from "omorphia";
 import "omorphia/dist/style.css";
-import { useCompactNumber } from "./composables/compact-number";
-
-const isTextVisible = ref(false);
-
-//markdownEditor
-import { ref } from "vue";
-const description = ref(null);
-
-function onButtonPress() {
-  isTextVisible.value = true;
-}
-
-const reportModal = ref<typeof ReportModal | null>(null);
-
-const { data } = await useModrinthData("project/{id|slug}", {
-  pathParams: {
-    "id|slug": "sodium",
-  },
-});
-
-const { data: members } = await useModrinthData("project/{id|slug}/members", {
-  pathParams: {
-    "id|slug": "sodium",
-  },
-});
-
-const sortedMembers = [...members.value].sort(
-  (memberA, memberB) => (memberA.ordering ?? 0) - (memberB.ordering ?? 0)
-);
 
 function onPrisonSend() {
   alert("sent to prison");

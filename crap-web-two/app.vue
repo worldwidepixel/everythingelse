@@ -5,7 +5,6 @@ import {
   ReportModal,
   ProjectCard,
   ScaleIcon,
-  MarkdownEditor,
 } from "omorphia";
 import "omorphia/dist/style.css";
 

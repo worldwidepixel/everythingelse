@@ -38,8 +38,6 @@ const sortedMembers = [...members.value].sort(
   (memberA, memberB) => (memberA.ordering ?? 0) - (memberB.ordering ?? 0)
 );
 
-const formatCompactNumber = useCompactNumber();
-
 function onPrisonSend() {
   alert("sent to prison");
 }
